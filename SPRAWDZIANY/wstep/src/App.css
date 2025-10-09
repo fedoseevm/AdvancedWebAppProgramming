@@ -1,0 +1,23 @@
+body {
+  background-color: rgb(108, 108, 255);
+}
+
+.App {
+  padding: 25px;
+}
+.obrazek {
+  width: 400px;
+}
+
+.napis {
+  text-align: center;
+  color: rgb(231, 231, 116);
+}
+
+.obliczenia {
+  color: rgb(84, 246, 84);
+}
+
+p {
+  font-weight: bold;
+}

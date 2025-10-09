@@ -1,0 +1,31 @@
+body {
+  background-color: rgb(195, 58, 58);
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  color: yellow;
+}
+
+.App-fib-image {
+  width: 250px;
+}
+
+.App-fibonacci {
+  text-align: left;
+  margin: 75px;
+  color: white;
+  font-weight: bold;
+}
+
+.App-fibonacci .App-fib-header {
+  color: rgb(0, 0, 186);
+}
