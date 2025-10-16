@@ -1,0 +1,16 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 30vmin;
+}
+
+header {
+  color: brown;
+}
+
+main {
+  width: 100%;
+  display: inline-flex;
+}
