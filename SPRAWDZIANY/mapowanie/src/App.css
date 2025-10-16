@@ -1,0 +1,32 @@
+body {
+  background-color: yellow;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  color: blue;
+}
+
+.Table-img {
+  width: 200px;
+}
+
+.Table-list {
+  text-align: left;
+}
+
+table {
+  width: 100%;
+  color: red;
+  background-color: rgb(212, 212, 212);
+  font-size: 32px;
+  text-transform: capitalize;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 2px solid brown;
+}
