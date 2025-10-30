@@ -1,20 +1,14 @@
 import './App.css';
 import Header from './lib/header/Header';
-import logo from './lib/header/logo.jpg';
+import CarMain from './lib/main/CarMain';
+import Footer from './lib/footer/Footer';
 
 function App() {
   return (
     <div className="App">
-      <header>
-        <Header nazwaFirmy="BestCars" />
-        <img className='App-logo' src={logo} alt="Logo" />
-      </header>
-      <main>
-        
-      </main>
-      <footer>
-
-      </footer>
+      <Header nazwaFirmy="BestCars" />
+      <CarMain />
+      <Footer otwarcie="8:00" zamkniecie="20:00"/>
     </div>
   );
 }
