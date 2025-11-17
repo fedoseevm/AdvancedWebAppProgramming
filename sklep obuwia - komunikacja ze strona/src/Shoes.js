@@ -1,4 +1,5 @@
 import { Component } from "react";
+import ShoesDescription from "./components/ShoesDesc";
 
 class Shoes extends Component {
     constructor(props) {
@@ -9,14 +10,14 @@ class Shoes extends Component {
                     id: 0,
                     nazwa: "sandaly",
                     rodzaj: "letnie",
-                    foto: "placeholder",
+                    img: "/images/sandaly.jpg",
                     ilosc: 2
                 },
                 {
                     id: 1,
                     nazwa: "klapki",
                     rodzaj: "letnie",
-                    foto: "placeholder",
+                    img: "/images/klapki.jpg",
                     ilosc: 7
                 }
             ]
@@ -31,14 +32,14 @@ class Shoes extends Component {
                     id: prevState.shoes.length + 1,
                     nazwa: "japonki",
                     rodzaj: "letnie",
-                    foto: "placeholder",
+                    img: "/images/japonki.jpg",
                     ilosc: 11
                 },
                 {
                     id: prevState.shoes.length + 2,
                     nazwa: "drewniaki",
                     rodzaj: "letnie",
-                    foto: "placeholder",
+                    img: "/images/drewniaki.jpg",
                     ilosc: 0
                 }
             ]
@@ -53,14 +54,14 @@ class Shoes extends Component {
                     id: prevState.shoes.length + 1,
                     nazwa: "kozaki",
                     rodzaj: "zimowe",
-                    foto: "placeholder",
+                    img: "/images/kozaki.jpg",
                     ilosc: 0
                 },
                 {
                     id: prevState.shoes.length + 2,
                     nazwa: "trapery",
                     rodzaj: "zimowe",
-                    foto: "placeholder",
+                    img: "/images/trapery.jpg",
                     ilosc: 1
                 }
             ]
@@ -75,47 +76,67 @@ class Shoes extends Component {
         });
     };
 
-    getSummerShoes = () => {
-        this.setState({
-            summerShoes: this.state.shoes.filter(function(shoesPair) {
-                return shoesPair.rodzaj == "letnie";
-            })
-        });
+    sellCurrentShoesPair = (id) => {
+        this.setState(prev => ({
+            shoes: prev.shoes.map(shoe =>
+                shoe.id === id
+                    ? { ...shoe, ilosc: Math.max(0, shoe.ilosc - 1) }
+                    : shoe
+            )
+        }));
     };
 
-    getWinterShoes = () => {
-        this.setState({
-            winterShoes: this.state.shoes.filter(function(shoesPair) {
-                return shoesPair.rodzaj == "zimowe";
-            })
-        });
+    addCurrentShoePair = (id) => {
+        this.setState(prev => ({
+            shoes: prev.shoes.map(shoe =>
+                shoe.id === id ? { ...shoe, ilosc: shoe.ilosc + 1 } : shoe
+            )
+        }));
     };
 
-    sellCurrentShoesPair = id => {
-        if (shoes[id].ilosc >= 0) {
-            shoes[id].ilosc -= 1;
-        };
-    };
-
-    addCurrentShoePair = id => {
-        shoes[id].ilosc++;
-    };
-
-
-    render () {
-        const summerShoes = this.getSummerShoes();
-        const winterShoes = this.getWinterShoes();
-
-        return(
+    render() {
+        const summerShoes = this.state.shoes.filter(shoe => shoe.rodzaj === "letnie");
+        const winterShoes = this.state.shoes.filter(shoe => shoe.rodzaj === "zimowe");
+        
+        return (
             <main>
-                <Header nazwaFirmy="Big steps" />
                 <div className="Controls-container">
                     <button onClick={this.addSummerShoes}>Przyjmij obuwie letnie</button>
                     <button onClick={this.addWinterShoes}>Przyjmij obuwie zimowe</button>
                     <button onClick={this.deleteSoldOutShoes}>Usuń wyprzedane</button>
 
                 </div>
+                <div className="Main-container">
+                    <h2>Nazwa oferta: </h2>
+                    <h3>Obuwie letnie</h3>
+                    {summerShoes.map(shoe => (
+                        <ShoesDescription
+                        key={shoe.id}
+                        shoe={shoe}
+                        sellCurrentShoesPair={this.sellCurrentShoesPair}
+                        addCurrentShoePair={this.addCurrentShoePair}
+                        />
+                    ))}
+
+                    {winterShoes.length > 0 && (
+                        <div>
+                            <h3>Obuwie zimowe</h3>
+                            {winterShoes.map(shoe => (
+                                <ShoesDescription
+                                key={shoe.id}
+                                shoe={shoe}
+                                sellCurrentShoesPair={this.sellCurrentShoesPair}
+                                addCurrentShoePair={this.addCurrentShoePair}
+                                />
+                            ))}
+                        </div>
+                    )}
+
+
+                </div>
             </main>  
-        )
+        );
     }
 }
+
+export default Shoes;
