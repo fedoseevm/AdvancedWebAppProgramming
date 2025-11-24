@@ -87,11 +87,18 @@ class Shoes extends Component {
     };
 
     addCurrentShoePair = (id) => {
-        this.setState(prev => ({
-            shoes: prev.shoes.map(shoe =>
-                shoe.id === id ? { ...shoe, ilosc: shoe.ilosc + 1 } : shoe
-            )
-        }));
+        let amount = prompt("Podaj ilość par.")
+        if (isNaN(amount) || amount < 0) {
+            alert("Podaj dodatnią liczbę!")
+        }
+        else {
+            amount = Number(amount);
+            this.setState(prev => ({
+                shoes: prev.shoes.map(shoe =>
+                    shoe.id === id ? { ...shoe, ilosc: shoe.ilosc + amount } : shoe
+                )
+            }));
+        }
     };
 
     render() {

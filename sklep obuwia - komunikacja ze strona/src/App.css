@@ -1,3 +1,7 @@
+body {
+    background-color: lightblue;
+}
+
 .App {
   text-align: center;
 }
@@ -6,6 +10,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.Controls-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
 }
 
 .Shoes-card {
@@ -19,13 +29,12 @@
     margin-bottom: 20px;
     background: #fff;
     width: 600px;
+    box-shadow: 0 0 25px rgb(231, 231, 231);
 }
 
 .Shoes-card img {
     width: 140px;
-    height: auto;
     object-fit: cover;
-    border-radius: 6px;
 }
 
 .Shoes-card-desc {
@@ -47,10 +56,5 @@
     border-radius: 5px;
     border: 1px solid #aaa;
     background-color: #f2f2f2;
-    transition: background 0.2s;
-}
-
-.Shoe-card-btn-group button:hover {
-    background-color: #e0e0e0;
 }
 
