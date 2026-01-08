@@ -111,6 +111,15 @@ class Obliczenia extends Component {
                 </div>
                 <div className="column">
                     <h3>Interpretacja graficzna:</h3>
+                    {this.state.showResult && this.state.delta > 0 && (
+                        <img src="images/delta_dodatnia.png" alt="Delta dodatnia"></img>
+                    )}
+                    {this.state.showResult && this.state.delta === 0 && (
+                        <img src="images/delta_zero.png" alt="Delta równa się 0"></img>
+                    )}
+                    {this.state.showResult && this.state.delta < 0 && (
+                        <img src="images/delta_ujemna.png" alt="Delta ujemna"></img>
+                    )}
                 </div>
                 <div className="wynik">
                     <h3>Równanie o postaci:</h3>
