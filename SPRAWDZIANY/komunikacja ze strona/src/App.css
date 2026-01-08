@@ -1,0 +1,21 @@
+body {
+  background-color: lightyellow;
+}
+.App {
+  text-align: center;
+}
+
+header {
+  color: green;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.kwiaty-card p {
+  color: blue;
+}

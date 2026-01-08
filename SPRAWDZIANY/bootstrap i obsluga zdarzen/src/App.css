@@ -1,0 +1,24 @@
+body {
+  background-color: lightgrey;
+}
+
+.App {
+  text-align: center;
+  color: blue;
+}
+
+header {
+  font-style: italic;
+  font-weight: bold;
+  text-decoration: underline;
+  color: red;
+}
+
+img {
+  width: 300px;
+}
+
+footer {
+  color: green;
+  font-style: italic;
+}
