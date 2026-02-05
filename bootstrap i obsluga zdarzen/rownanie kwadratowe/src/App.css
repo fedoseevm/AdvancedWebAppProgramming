@@ -1,0 +1,61 @@
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.App-info {
+  text-align: left;
+}
+
+header {
+  color: darkred;
+}
+
+header h1 {
+  font-style: italic;
+}
+
+.App-info {
+  color: darkblue;
+  font-weight: bold;
+}
+
+h3 {
+  color: darkorchid;
+  text-decoration: underline;
+}
+
+.App-info div {
+  color: blue;
+  font-size: 16px;
+  line-height: 7px;
+}
+
+main {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.wynik {
+  color: blue;
+  font-weight: bold;
+}
+.wynik h3 {
+  color: darkblue;
+  text-decoration: none;
+}
+
+.column {
+  width: 50%;
+}
+
+.wynik {
+  width: 100%;
+}
+
+footer {
+  color: darkgreen;
+}
