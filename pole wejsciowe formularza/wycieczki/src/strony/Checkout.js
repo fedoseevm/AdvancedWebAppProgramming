@@ -64,6 +64,7 @@ function Checkout() {
         if (isNaN(daneOsobowe.iloscOsob) || daneOsobowe.iloscOsob <= 0) {
             daneOsobowe.wartoscWycieczki *= daneOsobowe.iloscOsob;
         }
+        return daneOsobowe.wartoscWycieczki;
     }
 
 
@@ -143,7 +144,7 @@ function Checkout() {
                 <p>Wyżywienie: {daneOsobowe.wyzywienie === "" ? "brak danych" : daneOsobowe.wyzywienie}</p>
                 <p>Uwagi: {daneOsobowe.uwagi === "" ? "brak" : daneOsobowe.uwagi}</p>
                 <p>Ilość osób: {daneOsobowe.email === "" ? "nie został podany" : daneOsobowe.email}</p>
-                <p>Aktualna wartość wycieczki: {daneOsobowe.wartoscWycieczki}</p>
+                <p>Aktualna wartość wycieczki: {obliczWartosc()}</p>
             </form>
         </main>
 
